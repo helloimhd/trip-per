@@ -1,0 +1,100 @@
+<h1>New Flight</h1>
+
+<div class="container">
+
+	<div class="iconHeader-container">
+		<div></div>
+		<div class="homeBye-container">
+			<%= link_to image_tag("icons/house.png", class: "icons-trips"), root_path %>
+			<%= link_to image_tag("icons/exit.png", class: "icons-trips", id: "exit"), destroy_user_session_url, method: :delete %>
+		</div>
+	</div>
+
+	<br />
+
+	<%= form_with scope: :flight, url: flights_path, html: { autocomplete: "off" }, local: true do |form| %>
+
+	<input type="hidden" value="<%= @trip.id %>" name="flight[trip_id]"></input>
+
+
+
+	<div class="form-row">
+		<div class="col-6 col-lg-6">
+			<label>Airline</label>
+			<%= form.text_field :airline_code, list: "airlines", class: "form-control form-control-lg", placeholder: "Airline Name", required: true %>
+			<datalist id="airlines">
+				<%= @responses.each do |response| %>
+					<option value=<%= response["iata"] %>><%= response["name"] %></option>
+				<% end %>
+			</datalist>
+		</div>
+
+		<div class="col-6 col-lg-6">
+			<label>Flight No.</label>
+			<%= form.text_field :flight_no, class: "form-control form-control-lg", placeholder: "000", required: true %>
+		</div>
+	</div>
+
+	<br />
+
+	<div class="form-row">
+		<div class="col-6 col-lg-6">
+			<label>From</label>
+			<%= form.text_field :from, list: "fromAirport", class: "form-control form-control-lg", placeholder: "Departing from ...", required: true %>
+			<datalist id="fromAirport">
+				<%= @airports.each do |airport| %>
+					<option value="<%= airport.iata %>"><%= airport.name %></option>
+				<% end %>
+			</datalist>
+		</div>
+
+		<div class="col-6 col-lg-6">
+			<label>To</label>
+			<%= form.text_field :to, list: "toAirport", class: "form-control form-control-lg", placeholder: "Arriving at ...", required: true %>
+			<datalist id="toAirport">
+				<%= @airports.each do |airport| %>
+					<option value="<%= airport.iata %>"><%= airport.name %></option>
+				<% end %>
+			</datalist>
+		</div>
+	</div>
+
+	<br />
+
+	<div class="form-row">
+		<div class="col-7 col-lg-6">
+			<label>Departure Date</label>
+			<%= form.date_field :dept_date, min: @trip.start_date, max: @trip.end_date, class: "form-control form-control-lg", required: true %>
+		</div>
+
+		<div class="col-5 col-lg-6">
+			<label>Time</label>
+			<%= form.time_field :dept_time, class: "form-control form-control-lg", required: true %>
+		</div>
+	</div>
+
+	<br />
+
+	<div class="form-row">
+		<div class="col-7 col-lg-6">
+			<label>Arrival Date</label>
+			<%= form.date_field :arr_date, min: @trip.start_date, max: @trip.end_date, class: "form-control form-control-lg", required: true %>
+		</div>
+
+		<div class="col-5 col-lg-6">
+			<label>Time</label>
+			<%= form.time_field :arr_time, class: "form-control form-control-lg", required: true %>
+		</div>
+	</div>
+
+	<br />
+
+	<button type="submit" class="buttons">Confirm</button>
+	<% end %>
+
+	<br />
+	<footer>
+		<%= link_to image_tag("icons/back.png", class: "icons-trips"), flights_path %>
+	</footer>
+
+</div>

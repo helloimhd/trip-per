@@ -1,0 +1,145 @@
+// Place all the styles related to the Trips controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+	background-size: cover;
+	border-radius: 20px;
+	margin-bottom: 0 !important;
+}
+
+
+.optionMain-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	// border: solid 1px red;
+	padding: 10px;
+}
+
+.option-container {
+	padding: 20px;
+	border: 3px solid #CEA0AE;
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 25px;
+}
+
+.days-container {
+	background-color: rgba(255,255,255,0.6);
+	border-radius: 20px;
+
+	p {
+		text-align: center;
+		padding: 10px;
+		font-family: 'PT Sans Narrow', sans-serif;
+		font-size: 30px;
+		font-weight: bold;
+		color: black;
+	}
+}
+
+.tripName-container {
+	background-color: rgba(255,255,255,0.6);
+	border-radius: 20px;
+
+
+	h1 {
+		padding: 10px;
+		font-weight: bold;
+		border-bottom: none;
+	}
+}
+
+.jumbotron.jumbotron-fluid {
+  position: relative;
+}
+
+.indvTrip-container {
+	border: 3px solid #EBE9E9;
+	border-radius: 25px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.delete-container {
+	position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+.edit-container {
+	position: absolute;
+  top: 12px;
+  right: 50px;
+}
+.tripDetails-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.tripDuration-container {
+		width: 49%;
+
+		h2 {
+			font-family: 'PT Sans Narrow', sans-serif;
+			font-weight: bold;
+			font-size: 45px;
+		}
+	}
+
+	.tripDate-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 10px;
+	}
+
+	.dayMonth-container {
+		display: flex;
+		flex-direction: column;
+		padding-right: 10px;
+		max-width: 66%;
+
+		h4 {
+			font-size: 25px;
+			font-family: 'Pompiere', cursive;
+			font-weight: 700;
+		}
+	}
+
+	.number-container {
+		display: flex;
+		align-items: center;
+
+		h2 {
+			background-color: white;
+			font-size: 50px;
+			font-weight: 900;
+		}
+	}
+}
+
+.tripDuration-container {
+	border: 2px solid #CEA0AE;
+	border-radius: 20px;
+
+	h2 {
+		background-color: #CEA0AE;
+		text-align: center;
+		padding: 5px 0 5px;
+		border-radius: 17px 17px 0 0;
+	}
+
+}
+
+.footer {
+
+	img.icons-trips {
+	}
+
+}
